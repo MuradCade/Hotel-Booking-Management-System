@@ -55,7 +55,6 @@ import {getFirestore,collection,getDocs,doc,updateDoc,deleteDoc,getDoc,addDoc} f
     await updateDoc(ref,{
         "bookingstatus":"Canceled"
     }).then(()=>{
-       
         alert('Booking is Canceled');
         window.location.href = 'bookedroomsinfo.html';
     }).catch((error)=>{
@@ -66,3 +65,7 @@ import {getFirestore,collection,getDocs,doc,updateDoc,deleteDoc,getDoc,addDoc} f
     });
     
   }
+
+
+
+  

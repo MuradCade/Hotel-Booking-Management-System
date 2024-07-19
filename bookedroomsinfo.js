@@ -1,6 +1,6 @@
   // Import the functions you need from the SDKs you need
   import { initializeApp} from "https://www.gstatic.com/firebasejs/9.17.2/firebase-app.js";
-  import {getFirestore,addDoc,collection,getDocs,doc,deleteDoc} from"https://www.gstatic.com/firebasejs/9.17.2/firebase-firestore.js";
+  import {getFirestore,addDoc,collection,getDocs,doc,deleteDoc,updateDoc} from"https://www.gstatic.com/firebasejs/9.17.2/firebase-firestore.js";
   import {getAuth} from "https://www.gstatic.com/firebasejs/9.17.2/firebase-auth.js";
 
   import {firebaseConfig} from './firebaseconfig.js';
@@ -21,6 +21,10 @@
   const url = window.location.search;
   let urlpath = url.slice(1,4);
   let imgdisplay =  url.slice(5,180);
+//   const url = window.location.search;
+let canceledurl = url.slice(1,9);
+let documentidtwo =  url.slice(10,30);
+
   
 
 
@@ -69,8 +73,14 @@ if(urlpath == 'img'){
                    </tr>                    
                `;
                
-               
                number ++;
+               if(canceledurl == 'canceled'){
+                if(doc.id == documentidtwo){
+                    // console.log(doc.data().roomid);
+                    updatebookingststusonroomsinformation(doc.data().roomid);
+
+                }
+               }
            });
        }
    } catch (error) {
@@ -81,6 +91,25 @@ if(urlpath == 'img'){
 }
 
 
+
+
+async function updatebookingststusonroomsinformation(documentid){
+    const ref = doc(db,"roomsinformation",documentid.toString());
+    await updateDoc(ref,{
+        "roomstatus":"Available"
+    }).then(()=>{
+       
+      console.log('room status change');
+      // window.location.href = 'bookedroomsinfo.html';
+    }).catch((error)=>{
+        // alert('failed to Approve Booking'+error);
+
+        console.log('room status failed to change: '+error);
+
+
+    });
+    
+  }
 
 
 window.onload = displayallroomsdata();
