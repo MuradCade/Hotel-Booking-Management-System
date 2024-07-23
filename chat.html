@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Add New Room</title>
+  <title>Inbox</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -38,7 +38,7 @@
   ======================================================== -->
 </head>
 
-<body>
+<body id="body">
 
   <!-- ======= Header ======= -->
   <header id="header" class="header fixed-top d-flex align-items-center">
@@ -111,12 +111,12 @@
       </li><!-- End Dashboard Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#" style="background-color: #f6f9ff !important; color: #6575f4 !important;">
+        <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#" >
           <i class="bi bi-menu-button-wide" style="color: #6575f4 !important;"></i><span>Rooms information</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="addroom.html" style="background-color: #f6f9ff !important; color: #6575f4 !important;">
+            <a href="addroom.html" >
               <i class="bi bi-circle" style="color: #6575f4 !important;"></i><span>Add New Room</span>
             </a>
           </li>
@@ -142,17 +142,17 @@
         </a>
       </li><!-- End Tables Nav -->
       <li class="nav-item">
-        <a class="nav-link collapsed"  href="chat.html">
+        <a class="nav-link collapsed"  href="chat.html" style="background-color: #f6f9ff !important; color: #6575f4 !important;">
           <i class="bi bi-chat"></i><span>Inbox</span>
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#components-navs" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-menu-button-wide"></i><span>Users</span><i class="bi bi-chevron-down ms-auto"></i>
+        <a class="nav-link collapsed" data-bs-target="#components-navs" data-bs-toggle="collapse" href="#" >
+          <i class="bi bi-menu-button-wide"style="color: #6575f4 !important;"></i><span>Users</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="components-navs" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="addnewuser.html">
+            <a href="addnewuser.html" >
               <i class="bi bi-circle"></i><span>Add new user</span>
             </a>
           </li>
@@ -194,7 +194,7 @@
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item ">Dashboard</li>
-          <li class="breadcrumb-item active">Add New Room</li>
+          <li class="breadcrumb-item active">Inobox</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -204,77 +204,48 @@
 
        
 
-          <div class="col-lg-6">
-            <div class="card p-2">
-                <h2 class="card-title px-3">Add New Room</h2>
-                <div class="card-body">
-                    <p class="bg-danger text-white p-2" id="error" style="display:none"></p>
-                    <p class="bg-success text-white p-2" id="success" style="display:none"></p>
-                    <form>
-                        <!-- <p class="bg-danger text-white p-1" id="msg" style="display: none; font-size: 14px !important;"></p> -->
-                        <div class="form-group mb-3">
-                            <label  class="form-label" style="font-size: 14px !important;">Room Image</label>
-                            <input type="file" class="form-control" id="roomimage">
-                        </div>
-                        <div class="form-group mt-2 mb-2">
-                            <label  class="form-label" style="font-size: 14px !important;">Room Name</label>
-                            <input type="text" class="form-control" placeholder="Enter Room Name" id="roomname">
-                        </div>
-                        <div class="form-group mt-2 mb-2">
-                            <label  class="form-label" style="font-size: 14px !important;">Room Description</label>
-                            <textarea  rows="3" cols="2" placeholder="Enter Room Description" class="form-control" id="roomdesc"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label  class="form-label" style="font-size: 14px !important;">Room Price</label>
-                            <input type="number" class="form-control" placeholder="Enter Room Price"id="roomprice">
-                        </div>
-                        <div class="form-group mt-3 mb-2">
-                            <label  class="form-label" style="font-size: 14px !important;">Free Breakfast</label>
-                            <select id="breakfast" class="form-control">
-                                <option value="yes">yes</option>
-                                <option value="no">no</option>
-                            </select>
-                        </div>
-                        <div class="form-group mt-3 mb-4">
-                            <label  class="form-label" style="font-size: 14px !important;">Free Wifi</label>
-                            <select id="wifi" class="form-control">
-                                <option value="yes">yes</option>
-                                <option value="no">no</option>
-                            </select>
-                        </div>
-                        <div class="form-group mt-3 mb-4">
-                          <label  class="form-label" style="font-size: 14px !important;">Free TV</label>
-                          <select id="tv" class="form-control">
-                              <option value="yes">yes</option>
-                              <option value="no">no</option>
-                          </select>
-                      </div>
-                      <div class="form-group mt-3 mb-4">
-                        <label  class="form-label" style="font-size: 14px !important;">Room Status</label>
-                        <select id="roomstatus" class="form-control">
-                            <option value="Available">Available</option>
-                            <option value="Booked">Booked</option>
-                        </select>
+          <div class="col-lg-5">
+           <div class="card p-2">
+            <h4 class="card-title mb-0">Chats</h4>
+            <p style="font-size: 14px;">the below chats are people who can directly contact you from the app</p>
+            <hr>
+
+            <div class="container" id="usersbox">
+                <div style="background-color:#ebe5ff !important; color:balck; padding:10px; display:flex; border-radius:10px; margin-top:12px !important; cursor:pointer" id="boxmsg">
+                    <div style="background-color:#9f75ff; width:40px; height:50; border-radius:20px; display:flex; align-items:center; justify-content:center;">
+                        <p style="font-size:18px; font-weight:bold; position:relative; top:8px;" id="personfirstletter"></p>
                     </div>
-                    <div class="form-group">
-                      <label  class="form-label" style="font-size: 14px !important;">Hotel Name</label>
-                      <input type="text" class="form-control" placeholder="Enter Hotel Name"id="hotelname">
-                  </div>
-                  <div class="form-group">
-                    <label  class="form-label" style="font-size: 14px !important;">Rate  Room</label>
-                    <input type="number" class="form-control" placeholder="Rate Room from 1-5"id="rating">
+                     <p style="font-weight:bold; position:relative; top:10px; left:10px;" id="personemail"></p>
+                    </div>
+            </div>
+           </div>
+          </div>
+          <div class="col-lg-6" id="messagebox" style="display:none;">
+            <div class="card" >
+                <h4 class="card-title mx-4" id="userchating"></h4>
+                <div  onchange="   setTimeout(function(){
+                  window.location.reload(1);
+               }, 5000);"class="card-body"id="chatbox" style="height:350px; background-color:#f3f1ff; overflow: hidden; overflow-y: visible; padding:10px;">
+                    <p id="mymessage" style="float:left"></p> <br>
+                    <p id="otherusermessgae"  style="float:right"></p>
+                    
                 </div>
-                    </form>
-                    <button class="btn btn-primary" id="submit">Submit</button>
+                <div class="fom-group d-flex">
+                    <input type="text" placeholder="Write Your Message Here" class="form-control" id="message">
+                    <button class="btn btn-primary" id="send">Send</button>
                 </div>
             </div>
           </div>
-
       </div>
     </section>
 
   </main><!-- End #main -->
+<script>
 
+    function reload(){
+     
+    }
+</script>
   <!-- ======= Footer ======= -->
   <footer id="footer" class="footer">
     <div class="copyright">
@@ -304,7 +275,7 @@
   <!-- Template Main JS File -->
    <script type="module" src="logout.js"></script>
    <script type="module" src="displayusernameinheader.js"></script>
-   <script type="module" src="addnewroom.js"></script>
+   <script type="module" src="messages.js"></script>
   <!-- <script src="assets/js/main.js"></script> -->
 
 </body>
