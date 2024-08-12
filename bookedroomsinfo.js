@@ -68,6 +68,8 @@ if(urlpath == 'img'){
                    <td>${doc.data().phonenumber}</td>
                    <td>${doc.data().paymentmethod}</td>
                    <td>$${doc.data().totalprice}</td>
+                   <td>${doc.data().fromdate}</td>
+                   <td>${doc.data().todate}</td>
                    <td>${doc.data().bookingstatus == 'pending' ? `<p class='text-danger'>Pending</p>`:doc.data().bookingstatus == 'Approved'?`<p class='text-success'>Aproved</p>`:`<p class='text-danger'>Canceled</p>`}</td>
                    <td>${doc.data().bookingstatus == 'pending' ? `<a href='bookedroomsinfo.html?update=${doc.id}' class='btn btn-primary'>Approve</a>&numsp;<a href='bookedroomsinfo.html?canceled=${doc.id}' class='btn btn-danger'>Cancel</a>`:doc.data().bookingstatus == 'Approved'?`<p class='text-success'>Booking Approved</p>`:`<p class='text-danger'>Booking Canceled</p>`}</td>
                    </tr>                    
